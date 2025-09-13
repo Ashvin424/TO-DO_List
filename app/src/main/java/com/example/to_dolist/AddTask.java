@@ -118,7 +118,7 @@ public class AddTask extends BottomSheetDialogFragment {
                 if (dueDate == null || dueDate.isEmpty()) {
                     taskMap.put("dueDate", "Due date not set");
                 } else {
-                    taskMap.put("dueDate", dueDate);
+                    taskMap.put("dueDate", setDate.getText());
                 }
 
                 firestore.collection("task").document(id).update(taskMap)
@@ -140,7 +140,7 @@ public class AddTask extends BottomSheetDialogFragment {
                 if (dueDate == null || dueDate.isEmpty()) {
                     taskMap.put("dueDate", "Due date not set");
                 } else {
-                    taskMap.put("dueDate", dueDate);
+                    taskMap.put("dueDate", setDate.getText());
                 }
 
                 taskMap.put("status", 0);

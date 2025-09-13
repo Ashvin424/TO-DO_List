@@ -63,7 +63,7 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
         ToDoModel toDoModel = todolist.get(position);
         Bundle bundle = new Bundle();
         bundle.putString("task", toDoModel.getTask());
-        bundle.putString("due", toDoModel.getDue());
+        bundle.putString("due", toDoModel.getDueDate());
         bundle.putString("id", toDoModel.TaskId);
 
         AddTask addTask = new AddTask();
@@ -76,8 +76,8 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
         ToDoModel toDoModel = todolist.get(position);
         holder.checkBox.setText(toDoModel.getTask());
         // Check if the due date is null or empty
-        if (toDoModel.getDue() != null && !toDoModel.getDue().isEmpty()) {
-            holder.dueDate.setText(String.format("Due on %s", toDoModel.getDue()));
+        if (toDoModel.getDueDate() != null && !toDoModel.getDueDate().isEmpty()) {
+            holder.dueDate.setText(String.format("Due on %s", toDoModel.getDueDate()));
         } else {
             holder.dueDate.setText("No due date set"); // Or any other placeholder text
         }

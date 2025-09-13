@@ -3,6 +3,7 @@ package com.example.to_dolist;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements OnDialogCloseList
                 if (documentChange.getType() == DocumentChange.Type.ADDED){
                     String id = documentChange.getDocument().getId();
                     ToDoModel toDoModel = documentChange.getDocument().toObject(ToDoModel.class).withId(id);
-
+                    Toast.makeText(this, ""+toDoModel.getDueDate(), Toast.LENGTH_SHORT).show();
                     mList.add(toDoModel);
                     adapter.notifyDataSetChanged();
                     Collections.reverse(mList);

@@ -6,12 +6,12 @@ public class ToDoModel extends TaskId {
     private String dueDate;
     private int status;
 
-    public String getDue() {
+    public String getDueDate() {
         return dueDate;
     }
 
-    public void setDue(String due) {
-        this.dueDate = due;
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
     }
 
     public int getStatus() {
